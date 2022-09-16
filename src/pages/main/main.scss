@@ -1,9 +1,20 @@
 // Файл обнуляющих стилей
-@import "null.scss";
+@import "styles/null.scss";
 
-h1{
-    color: red;
+.container{
+    max-width: 1000px;
+    margin: 50px auto;
+    background-color: red;
 }
-.first__title{
+.slider{
+    &__block{
+        background-color: gray;
+        text-align: center;
+    }
+&__num{
     font-size: 25px;
+}
+    &__slider{
+        width: 80%;
+    }
 }
