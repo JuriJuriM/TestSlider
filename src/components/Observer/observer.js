@@ -37,7 +37,7 @@ update(action) {
       this.state = this.initialState;
   }
 }
-}
+
 
 const stream$ = new Subject()
 
