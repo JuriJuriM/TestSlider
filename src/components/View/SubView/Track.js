@@ -1,11 +1,11 @@
 class Track {
-  constructor(slider: HTMLElement) {
+  constructor(slider) {
     super(slider);
     this.init();
   }
 }
 
-protected createSubView() {
+createSubView() {
   this.subView = document.createElement('div');
   this.subView.classList.add('slider__track');
   this.progress = document.createElement('div');
