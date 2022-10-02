@@ -6,4 +6,4 @@ const slider = document.querySelector('.slider');
 const track = new Track(slider);
 track.update({ from: 50 });
 const handle = new Handle(slider);
-handle.update({ from: 50 });
+handle.update({ from: 0 });
