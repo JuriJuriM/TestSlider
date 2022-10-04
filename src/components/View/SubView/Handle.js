@@ -6,7 +6,7 @@ class Handle {
 
   update(data) {
     const { from } = data;
-    this.progress.style.position = `${from}%`;
+    this.subView.style.left = `${from}%`;
   }
 
   createSubView() {
