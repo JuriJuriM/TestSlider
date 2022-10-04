@@ -5,8 +5,8 @@ import Label from '../../components/View/SubView/Label';
 
 const slider = document.querySelector('.slider');
 const track = new Track(slider);
-track.update({ from: 50 });
+track.update({ from: 80 });
 const handle = new Handle(slider);
-handle.update({ from: 50 });
+handle.update({ from: 80 });
 const label = new Label(slider);
-label.update({ from: 0 });
+label.update({ from: 80 });
