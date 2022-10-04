@@ -6,15 +6,15 @@ class Handle {
 
   update(data) {
     const { from } = data;
-    this.progress.style.width = `${from}%`;
+    this.progress.style.position = `${from}%`;
   }
 
   createSubView() {
     this.subView = document.createElement('div');
     this.subView.classList.add('slider__handle');
-    // this.progress = document.createElement('div');
-    // this.progress.classList.add('slider__progress');
-    // this.subView.appendChild(this.progress);
+    this.position = document.createElement('div');
+    this.position.classList.add('slider__slider');
+    this.subView.appendChild(this.position);
     this.slider.appendChild(this.subView);
   }
 
