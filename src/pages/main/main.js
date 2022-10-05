@@ -21,5 +21,7 @@ components.push(track);
 components.push(label);
 
 const update = (data) => {
-  components.forEach((comp) => comp.update({ from: 80 }));
+  components.forEach((comp) => comp.update(data));
 };
+
+update({ from: 50 });
