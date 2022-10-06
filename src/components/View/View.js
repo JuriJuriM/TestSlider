@@ -19,3 +19,5 @@ class View {
     this.View.style.left = `${from}%`;
   }
 }
+
+export default View;

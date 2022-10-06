@@ -2,6 +2,7 @@ import './main.scss';
 import Track from '../../components/View/SubView/Track';
 import Handle from '../../components/View/SubView/Handle';
 import Label from '../../components/View/SubView/Label';
+import View from '../../components/View/View';
 
 // const slider = document.querySelector('.slider');
 // const track = new Track(slider);
