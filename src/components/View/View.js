@@ -6,14 +6,16 @@ class View {
   }
 
   init() {
-
+    this.View();
   }
 
   createSlider() {
-
+    this.View = document.createElement('div');
+    this.View.classList.add('slider');
   }
 
-  update() {
-
+  update(data) {
+    const { from } = data;
+    this.View.style.left = `${from}%`;
   }
 }
