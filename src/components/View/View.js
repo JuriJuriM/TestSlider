@@ -12,15 +12,15 @@ class View {
   createSlider() {
     this.View = document.createElement('div');
     this.View.classList.add('slider');
-    this.position = document.createElement('div');
-    this.position.classList.add('slider');
-    this.View.appendChild(this.position);
+    this.components = document.createElement('div');
+    this.components.classList.add('slider');
+    this.View.appendChild(this.components);
     this.slider.appendChild(this.View);
   }
 
   update(data) {
     const { from } = data;
-    this.View.style.left = `${from}%`;
+    this.View.style.components = `${from}%`;
   }
 }
 
