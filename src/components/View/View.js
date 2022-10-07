@@ -20,8 +20,9 @@ class View {
   }
 
   update(data) {
-    const { from } = data;
-    this.View.style.components = `${from}%`;
+    // const { from } = data;
+    // this.View.style.components = `${from}%`;
+    this.components.forEach((comp) => comp.update(data));
   }
 }
 
