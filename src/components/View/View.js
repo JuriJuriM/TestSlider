@@ -12,6 +12,10 @@ class View {
   createSlider() {
     this.View = document.createElement('div');
     this.View.classList.add('slider');
+    this.position = document.createElement('div');
+    this.position.classList.add('slider');
+    this.View.appendChild(this.position);
+    this.slider.appendChild(this.View);
   }
 
   update(data) {
