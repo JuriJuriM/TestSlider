@@ -14,6 +14,7 @@ import View from '../../components/View/View';
 
 const slider = document.querySelector('.slider');
 const components = [];
+// const view = new View(slider);
 const handle = new Handle(slider);
 const track = new Track(slider);
 const label = new Label(slider);
