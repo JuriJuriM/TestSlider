@@ -17,6 +17,9 @@ class View {
     this.track = new Track(this.slider);
     this.label = new Label(this.slider);
     this.handle = new Handle(this.slider);
+    this.components.push(this.track);
+    this.components.push(this.label);
+    this.components.push(this.handle);
   }
 
   update(data) {
