@@ -11,6 +11,11 @@ class View {
 
   init() {
     this.createSlider();
+    // let label;
+    // let createSlider;
+    // this.addEventListener('click', function () {
+    //   console.log(label.value);
+    // });
   }
 
   createSlider() {
