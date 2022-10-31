@@ -11,11 +11,6 @@ class View {
 
   init() {
     this.createSlider();
-    // let label;
-    // let createSlider;
-    // this.addEventListener('click', function () {
-    //   console.log(label.value);
-    // });
   }
 
   createSlider() {
@@ -28,8 +23,6 @@ class View {
   }
 
   update(data) {
-    // const { from } = data;
-    // this.View.style.components = `${from}%`;
     this.components.forEach((comp) => comp.update(data));
   }
 }
