@@ -11,10 +11,6 @@ class View {
 
   init() {
     this.createSlider();
-    // My new metodes 15, 16, 17
-    // this.addEventListener('click', this.handle);
-    // this.addEventListener('click', this.label);
-    // this.addEventListener('click', this.track);
   }
 
   createSlider() {
