@@ -14,7 +14,7 @@ class Observer {
 
   emmit(action) {
     this.observers.forEach(observer => {
-      observer.emmit(action);
+      observer.onEmmit(action);
     });
   }
 }
