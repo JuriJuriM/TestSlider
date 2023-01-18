@@ -1,5 +1,8 @@
-class Handle {
+import Observer from '../../Observer/Observer';
+
+class Handle extends Observer {
   constructor(slider) {
+    super();
     this.slider = slider;
     this.init();
   }

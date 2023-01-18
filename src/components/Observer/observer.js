@@ -9,12 +9,14 @@ class Observer {
   }
 
   unsubscribe(observer) {
-    this.observers = this.observers.filter(obs => obs !== observer);
+    this.observers = this.observers.filter((obs) => obs !== observer);
   }
 
   emmit(action) {
-    this.observers.forEach(observer => {
+    this.observers.forEach((observer) => {
       observer.onEmmit(action);
     });
   }
 }
+
+export default Observer;
