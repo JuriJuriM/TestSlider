@@ -12,9 +12,9 @@ class Observer {
     this.observers = this.observers.filter(obs => obs !== observer);
   }
 
-  update(action) {
+  emmit(action) {
     this.observers.forEach(observer => {
-      observer.update(action);
+      observer.emmit(action);
     });
   }
 }
