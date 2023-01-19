@@ -9,8 +9,17 @@ class View {
     this.init();
   }
 
+  onEmmit(action) {
+    console.log(action);
+  }
+
+  bindSubscribe() {
+    this.components.forEach((comp) => comp.subscribe(this));
+  }
+
   init() {
     this.createSlider();
+    this.bindSubscribe();
   }
 
   createSlider() {
