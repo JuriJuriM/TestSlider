@@ -1,5 +1,8 @@
-class Label {
+import Observer from '../../Observer/Observer';
+
+class Label extends Observer {
   constructor(slider) {
+    super();
     this.slider = slider;
     this.init();
   }

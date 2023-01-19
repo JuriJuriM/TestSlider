@@ -1,5 +1,8 @@
-class Track {
+import Observer from '../../Observer/Observer';
+
+class Track extends Observer {
   constructor(slider) {
+    super();
     this.slider = slider;
     this.init();
   }
