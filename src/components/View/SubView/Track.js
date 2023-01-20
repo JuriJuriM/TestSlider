@@ -16,8 +16,15 @@ class Track extends Observer {
     this.slider.appendChild(this.subView);
   }
 
+  bindListeners() {
+    this.subView.addEventListener('click', () => {
+      this.emmit({ type: 'click on track', payload: 1 });
+    });
+  }
+
   init() {
     this.createSubView();
+    this.bindListeners();
   }
 
   update(data) {

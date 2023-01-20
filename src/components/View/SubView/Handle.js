@@ -21,8 +21,15 @@ class Handle extends Observer {
     this.slider.appendChild(this.subView);
   }
 
+  bindListeners() {
+    this.subView.addEventListener('click', () => {
+      this.emmit({ type: 'click in handle', payload: 12 });
+    });
+  }
+
   init() {
     this.createSubView();
+    this.bindListeners();
   }
 }
 

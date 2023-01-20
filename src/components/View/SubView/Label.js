@@ -19,8 +19,15 @@ class Label extends Observer {
     this.slider.appendChild(this.subView);
   }
 
+  bindListeners() {
+    this.subView.addEventListener('click', () => {
+      this.emmit({ type: 'click on label', payload: 1 });
+    });
+  }
+
   init() {
     this.createSubView();
+    this.bindListeners();
   }
 }
 
