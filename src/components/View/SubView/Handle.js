@@ -23,7 +23,7 @@ class Handle extends Observer {
 
   bindListeners() {
     this.subView.addEventListener('click', () => {
-      this.emmit({ type: 'click in handle', payload: 12 });
+      this.emmit({ type: 'click on a handle', payload: 12 });
     });
   }
 

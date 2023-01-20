@@ -18,7 +18,7 @@ class Track extends Observer {
 
   bindListeners() {
     this.subView.addEventListener('click', () => {
-      this.emmit({ type: 'click on track', payload: 1 });
+      this.emmit({ type: 'click on a track', payload: 1 });
     });
   }
 

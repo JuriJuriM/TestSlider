@@ -21,7 +21,7 @@ class Label extends Observer {
 
   bindListeners() {
     this.subView.addEventListener('click', () => {
-      this.emmit({ type: 'click on label', payload: 1 });
+      this.emmit({ type: 'click on a label', payload: 1 });
     });
   }
 
