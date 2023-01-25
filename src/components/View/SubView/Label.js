@@ -1,5 +1,9 @@
 import Observer from '../../Observer/Observer';
 
+// function convertPixelInPercent(width, value) {
+//   return (100 / width) * value;
+// }
+
 class Label extends Observer {
   constructor(slider) {
     super();
@@ -20,9 +24,25 @@ class Label extends Observer {
   }
 
   bindListeners() {
-    this.subView.addEventListener('click', () => {
-      this.emmit({ type: 'click on a label', payload: 1 });
-    });
+    this.handleLabelMouseDown = this.handleLabelMouseDown.bind(this);
+    this.handleWindowMouseMove = this.handleWindowMouseMove.bind(this);
+    this.handleWindowMouseUp = this.handleWindowMouseUp.bind(this);
+    this.subView.addEventListener('mousedown', this.handleLabelMouseDown);
+  }
+
+  handleLabelMouseDown(event) {
+    console.log('mouseDown');
+    window.addEventListener('mousemove', this.handleWindowMouseMove);
+  }
+
+  handleWindowMouseMove(event) {
+    console.log(event.clientX);
+    window.addEventListener('mouseup', this.handleWindowMouseUp);
+  }
+
+  handleWindowMouseUp() {
+    console.log('mouseUp');
+    window.removeEventListener('mousemove', this.handleWindowMouseMove);
   }
 
   init() {
