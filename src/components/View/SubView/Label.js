@@ -1,8 +1,8 @@
 import Observer from '../../Observer/Observer';
 
-// function convertPixelInPercent(width, value) {
-//   return (100 / width) * value;
-// }
+function convertPixelInPercent(width, value) {
+  return (100 / width) * value;
+}
 
 class Label extends Observer {
   constructor(slider) {
@@ -39,7 +39,7 @@ class Label extends Observer {
     console.log(event.clientX);
     const sliderWidth = this.slider.clientWidth;
     console.log(sliderWidth);
-    this.emmit({ type: 'lable', payload: { form: event.clientX } });
+    this.emmit({ type: 'lable', payload: { from: event.clientX } });
     window.addEventListener('mouseup', this.handleWindowMouseUp);
   }
 
