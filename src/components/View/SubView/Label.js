@@ -37,6 +37,9 @@ class Label extends Observer {
 
   handleWindowMouseMove(event) {
     console.log(event.clientX);
+    const sliderWidth = this.slider.clientWidth;
+    console.log(sliderWidth);
+    this.emmit({ type: 'lable', payload: { form: event.clientX } });
     window.addEventListener('mouseup', this.handleWindowMouseUp);
   }
 
