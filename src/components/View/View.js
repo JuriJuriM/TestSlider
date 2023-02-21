@@ -11,6 +11,7 @@ class View {
 
   onEmmit(action) {
     console.log(action);
+    this.update({ from: action.payload.from });
   }
 
   bindSubscribe() {

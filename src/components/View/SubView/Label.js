@@ -39,7 +39,7 @@ class Label extends Observer {
     console.log(event.clientX);
     const sliderWidth = this.slider.clientWidth;
     console.log(sliderWidth);
-    this.emmit({ type: 'lable', payload: { from: event.clientX } });
+    this.emmit({ type: 'lable', payload: { from: convertPixelInPercent(sliderWidth, event.clientX) } });
     window.addEventListener('mouseup', this.handleWindowMouseUp);
   }
 
