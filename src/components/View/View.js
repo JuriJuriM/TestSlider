@@ -11,6 +11,7 @@ class View {
 
   onEmmit(action) {
     console.log(action);
+    // Загрузил метод update, чтобы бегало число:
     this.update({ from: action.payload.from });
   }
 
