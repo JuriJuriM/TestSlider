@@ -15,8 +15,8 @@ class Handle extends Observer {
   update(data) {
     const { from } = data;
     this.subView.style.left = `${from}%`;
-    // 2) this.subView.innerHTML:
-    this.subView.innerHTML = `${from}`;
+    // 2) this.subView.innerHTML:- это совершенно не нужно!!!!
+    // this.subView.innerHTML = `${from}`;
   }
 
   createSubView() {
