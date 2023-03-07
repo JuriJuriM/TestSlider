@@ -37,7 +37,7 @@ class Track extends Observer {
     // 7) Закоммитил данную строку:
     // this.subView.addEventListener('mousedown', this.handleLabelMouseDown);
     // 8) А вместо неё записал такую:
-    // this.progress.addEventListener('mousedown', this.handleLabelMouseDown);
+    // this.progress.addEventListener('mousedown', this.handleLabelMouseDown); - неудачная попытка!
     this.subView.addEventListener('mousedown', this.handleWindowMouseMove);
   }
 
