@@ -26,25 +26,10 @@ class Track extends Observer {
   }
 
   bindListeners() {
-    // 2) Закоммитил три строки кода:
-    // this.subView.addEventListener('click', () => {
-    //   this.emmit({ type: 'click on a track', payload: 1 });
-    // });
-    // 3)    Добавил 4 строки кода:
-    this.handleLabelMouseDown = this.handleLabelMouseDown.bind(this);
+    // 2)    Оставил данную строку кода:
     this.handleWindowMouseMove = this.handleWindowMouseMove.bind(this);
-    this.handleWindowMouseUp = this.handleWindowMouseUp.bind(this);
-    // 7) Закоммитил данную строку:
-    // this.subView.addEventListener('mousedown', this.handleLabelMouseDown);
-    // 8) А вместо неё записал такую:
-    // this.progress.addEventListener('mousedown', this.handleLabelMouseDown); - неудачная попытка!
+    // 3) И оставил данную строку кода:
     this.subView.addEventListener('mousedown', this.handleWindowMouseMove);
-  }
-
-  // 4) Добавил данный код:
-  handleLabelMouseDown(event) {
-    console.log('mouseDown');
-    window.addEventListener('mousemove', this.handleWindowMouseMove);
   }
 
   // 5) Добавил данный код:
