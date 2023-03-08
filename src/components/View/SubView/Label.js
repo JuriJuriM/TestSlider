@@ -1,8 +1,10 @@
 import Observer from '../../Observer/Observer';
 
-function convertPixelInPercent(width, value) {
-  return (100 / width) * value;
-}
+import convertPixelInPercent from '../../../Utilites/Converters/Converters';
+
+// function convertPixelInPercent(width, value) {
+//   return (100 / width) * value;
+// }
 
 class Label extends Observer {
   constructor(slider) {
