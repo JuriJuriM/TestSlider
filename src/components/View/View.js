@@ -3,15 +3,18 @@ import Label from './SubView/Label';
 import Track from './SubView/Track';
 
 class View {
-  constructor(slider) {
+  // Добавляю options в параметры:
+  constructor(slider, options) {
+    // Добавляю console.log:
+    console.log(options);
     this.slider = slider;
     this.components = [];
-    this.init();
+    // Добавляю options в скобки:
+    this.init(options);
   }
 
   onEmmit(action) {
     console.log(action);
-    // Загрузил метод update, чтобы бегало число:
     this.update({ from: action.payload.from });
   }
 
@@ -19,12 +22,21 @@ class View {
     this.components.forEach((comp) => comp.subscribe(this));
   }
 
-  init() {
-    this.createSlider();
+  // Добавляю options в скобки:
+  init(options) {
+    // И здесь добавляю options в скобки:
+    this.createSlider(options);
     this.bindSubscribe();
   }
 
-  createSlider() {
+  // И снова добавляю options в скобки:
+  createSlider(options) {
+    // А здесь пишу следующую строку, добавляя переменную:
+    const { from, isHasLabels } = options;
+    if (isHasLabels) {
+      this.label = new Label(this.slider);
+      this.components.push(this.label);
+    }
     this.track = new Track(this.slider);
     this.label = new Label(this.slider);
     this.handle = new Handle(this.slider);
