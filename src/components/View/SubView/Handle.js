@@ -42,8 +42,8 @@ class Handle extends Observer {
     this.subView.addEventListener('mousedown', this.handleLabelMouseDown);
   }
 
-  // 5) Добавил данный код:
-  handleLabelMouseDown(event) {
+  // 5) Добавил данный код и убрал из скобок event:
+  handleLabelMouseDown() {
     console.log('mouseDown');
     window.addEventListener('mousemove', this.handleWindowMouseMove);
   }
@@ -53,7 +53,10 @@ class Handle extends Observer {
     console.log(event.clientX);
     const sliderWidth = this.slider.clientWidth;
     console.log(sliderWidth);
-    this.emmit({ type: 'handle', payload: { from: convertPixelInPercent(sliderWidth, event.clientX) } });
+    this.emmit({
+      type: 'handle',
+      payload: { from: convertPixelInPercent(sliderWidth, event.clientX) },
+    });
     window.addEventListener('mouseup', this.handleWindowMouseUp);
   }
 

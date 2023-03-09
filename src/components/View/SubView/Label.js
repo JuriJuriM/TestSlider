@@ -32,7 +32,8 @@ class Label extends Observer {
     this.subView.addEventListener('mousedown', this.handleLabelMouseDown);
   }
 
-  handleLabelMouseDown(event) {
+  // Убрал из скобок event
+  handleLabelMouseDown() {
     console.log('mouseDown');
     window.addEventListener('mousemove', this.handleWindowMouseMove);
   }
@@ -42,7 +43,10 @@ class Label extends Observer {
     const sliderWidth = this.slider.clientWidth;
     console.log(sliderWidth);
     // Исправил для лэйбла from: и т.д.
-    this.emmit({ type: 'lable', payload: { from: convertPixelInPercent(sliderWidth, event.clientX) } });
+    this.emmit({
+      type: 'lable',
+      payload: { from: convertPixelInPercent(sliderWidth, event.clientX) },
+    });
     window.addEventListener('mouseup', this.handleWindowMouseUp);
   }
 

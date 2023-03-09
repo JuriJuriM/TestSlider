@@ -39,7 +39,10 @@ class Track extends Observer {
     console.log(event.clientX);
     const sliderWidth = this.slider.clientWidth;
     console.log(sliderWidth);
-    this.emmit({ type: 'track', payload: { from: convertPixelInPercent(sliderWidth, event.clientX) } });
+    this.emmit({
+      type: 'track',
+      payload: { from: convertPixelInPercent(sliderWidth, event.clientX) },
+    });
     // 6) Закоммитил данную строку кода за ненадобностью:
     // window.addEventListener('mouseup', this.handleWindowMouseUp);
   }
