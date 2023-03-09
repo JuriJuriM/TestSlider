@@ -33,7 +33,7 @@ class View {
   createSlider(options) {
     // А здесь пишу следующую строку, добавляя переменную:
     const { from, isHasLabels } = options;
-    if (isHasLabels) {
+    if (isHasLabels === true) {
       this.label = new Label(this.slider);
       this.components.push(this.label);
     }
