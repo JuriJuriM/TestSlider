@@ -2,10 +2,6 @@ import Observer from '../../Observer/Observer';
 
 import convertPixelInPercent from '../../../Utilites/Converters/Converters';
 
-// 1) function convertPixelInPercent:
-// function convertPixelInPercent(width, value) {
-//   return (100 / width) * value;
-// }
 class Track extends Observer {
   constructor(slider) {
     super();
@@ -28,13 +24,10 @@ class Track extends Observer {
   }
 
   bindListeners() {
-    // 2)    Оставил данную строку кода:
     this.handleWindowMouseMove = this.handleWindowMouseMove.bind(this);
-    // 3) И оставил данную строку кода:
     this.subView.addEventListener('mousedown', this.handleWindowMouseMove);
   }
 
-  // 5) Добавил данный код:
   handleWindowMouseMove(event) {
     console.log(event.clientX);
     const sliderWidth = this.slider.clientWidth;

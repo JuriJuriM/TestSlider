@@ -2,10 +2,6 @@ import Observer from '../../Observer/Observer';
 
 import convertPixelInPercent from '../../../Utilites/Converters/Converters';
 
-// function convertPixelInPercent(width, value) {
-//   return (100 / width) * value;
-// }
-
 class Label extends Observer {
   constructor(slider) {
     super();
@@ -32,7 +28,6 @@ class Label extends Observer {
     this.subView.addEventListener('mousedown', this.handleLabelMouseDown);
   }
 
-  // Убрал из скобок event
   handleLabelMouseDown() {
     console.log('mouseDown');
     window.addEventListener('mousemove', this.handleWindowMouseMove);
@@ -42,7 +37,6 @@ class Label extends Observer {
     console.log(event.clientX);
     const sliderWidth = this.slider.clientWidth;
     console.log(sliderWidth);
-    // Исправил для лэйбла from: и т.д.
     this.emmit({
       type: 'lable',
       payload: { from: convertPixelInPercent(sliderWidth, event.clientX) },
