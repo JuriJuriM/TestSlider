@@ -3,32 +3,36 @@ import Observer from '../../Observer/Observer';
 import convertPixelInPercent from '../../../Utilites/Converters/Converters';
 
 class Track extends Observer {
-  constructor(slider) {
+  constructor(slider, options) {
     super();
     this.slider = slider;
-    this.init();
+    this.isHasProgress = options.isHasProgress;
+    this.init(options);
   }
 
-  update(data) {
-    const { from } = data;
-    this.progress.style.width = `${from}%`;
+  init(options) {
+    this.createSubView(options);
+    this.bindListeners();
   }
 
-  createSubView() {
+  createSubView(options) {
+    const { isHasProgress } = options;
     this.subView = document.createElement('div');
     this.subView.classList.add('slider__track');
-    this.progress = document.createElement('div');
-    this.progress.classList.add('slider__progress');
-    this.subView.appendChild(this.progress);
+    if (isHasProgress === true) {
+      this.progress = document.createElement('div');
+      this.progress.classList.add('slider__progress');
+      this.subView.appendChild(this.progress);
+    }
     this.slider.appendChild(this.subView);
   }
 
   bindListeners() {
-    this.handleWindowMouseMove = this.handleWindowMouseMove.bind(this);
-    this.subView.addEventListener('mousedown', this.handleWindowMouseMove);
+    this.handleTrackMouseDown = this.handleTrackMouseDown.bind(this);
+    this.subView.addEventListener('mousedown', this.handleTrackMouseDown);
   }
 
-  handleWindowMouseMove(event) {
+  handleTrackMouseDown(event) {
     console.log(event.clientX);
     const sliderWidth = this.slider.clientWidth;
     console.log(sliderWidth);
@@ -36,13 +40,13 @@ class Track extends Observer {
       type: 'track',
       payload: { from: convertPixelInPercent(sliderWidth, event.clientX) },
     });
-    // 6) Закоммитил данную строку кода за ненадобностью:
-    // window.addEventListener('mouseup', this.handleWindowMouseUp);
   }
 
-  init() {
-    this.createSubView();
-    this.bindListeners();
+  update(data) {
+    if (this.isHasProgress) {
+      const { from } = data;
+      this.progress.style.width = `${from}%`;
+    }
   }
 }
 

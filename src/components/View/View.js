@@ -3,13 +3,10 @@ import Label from './SubView/Label';
 import Track from './SubView/Track';
 
 class View {
-  // Добавляю options в параметры:
   constructor(slider, options) {
-    // Добавляю console.log:
     console.log(options);
     this.slider = slider;
     this.components = [];
-    // Добавляю options в скобки:
     this.init(options);
   }
 
@@ -22,26 +19,20 @@ class View {
     this.components.forEach((comp) => comp.subscribe(this));
   }
 
-  // Добавляю options в скобки:
   init(options) {
-    // И здесь добавляю options в скобки:
     this.createSlider(options);
     this.bindSubscribe();
   }
 
-  // И снова добавляю options в скобки:
   createSlider(options) {
-    // А здесь пишу следующую строку, добавляя переменную:
-    const { from, isHasLabels } = options;
-    if (isHasLabels === true) {
+    const { isHasLabels } = options;
+    if (isHasLabels) {
       this.label = new Label(this.slider);
       this.components.push(this.label);
     }
-    this.track = new Track(this.slider);
-    this.label = new Label(this.slider);
+    this.track = new Track(this.slider, options);
     this.handle = new Handle(this.slider);
     this.components.push(this.track);
-    this.components.push(this.label);
     this.components.push(this.handle);
   }
 
