@@ -3,14 +3,21 @@ import Observer from '../../Observer/Observer';
 import convertPixelInPercent from '../../../Utilites/Converters/Converters';
 
 class Label extends Observer {
-  constructor(slider) {
+  constructor(slider, options) {
     super();
+    this.state = options;
     this.slider = slider;
     this.init();
   }
 
-  update(data) {
-    const { from } = data;
+  setState(data) {
+    this.state = Object.assign(this.state, data);
+    this.update();
+  }
+
+  update() {
+    const { from } = this.state;
+    // const { from } = data;
     this.subView.innerHTML = `${from}`;
     this.subView.style.left = `${from}%`;
   }
