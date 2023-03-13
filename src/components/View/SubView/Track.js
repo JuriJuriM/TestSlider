@@ -5,9 +5,15 @@ import convertPixelInPercent from '../../../Utilites/Converters/Converters';
 class Track extends Observer {
   constructor(slider, options) {
     super();
+    this.state = options;
     this.slider = slider;
     this.isHasProgress = options.isHasProgress;
     this.init(options);
+  }
+
+  setState(data) {
+    this.state = Object.assign(this.state, data);
+    this.update();
   }
 
   init(options) {

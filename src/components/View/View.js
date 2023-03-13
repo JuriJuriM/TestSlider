@@ -5,9 +5,19 @@ import Track from './SubView/Track';
 class View {
   constructor(slider, options) {
     console.log(options);
+    this.state = options;
     this.slider = slider;
     this.components = [];
     this.init(options);
+  }
+
+  setState(data) {
+    this.state = Object.assign(this.state, data);
+    this.update();
+  }
+
+  update(data) {
+    this.components.forEach((comp) => comp.update(data));
   }
 
   onEmmit(action) {
@@ -34,10 +44,6 @@ class View {
     this.handle = new Handle(this.slider);
     this.components.push(this.track);
     this.components.push(this.handle);
-  }
-
-  update(data) {
-    this.components.forEach((comp) => comp.update(data));
   }
 }
 
