@@ -16,6 +16,13 @@ class Track extends Observer {
     this.update();
   }
 
+  update() {
+    if (this.isHasProgress) {
+      const { from } = this.state;
+      this.progress.style.width = `${from}%`;
+    }
+  }
+
   init(options) {
     this.createSubView(options);
     this.bindListeners();
@@ -46,13 +53,6 @@ class Track extends Observer {
       type: 'track',
       payload: { from: convertPixelInPercent(sliderWidth, event.clientX) },
     });
-  }
-
-  update(data) {
-    if (this.isHasProgress) {
-      const { from } = data;
-      this.progress.style.width = `${from}%`;
-    }
   }
 }
 
