@@ -16,8 +16,8 @@ class View {
     this.update();
   }
 
-  update(data) {
-    this.components.forEach((comp) => comp.update(data));
+  update() {
+    this.components.forEach((comp) => comp.update(this.state));
   }
 
   onEmmit(action) {
