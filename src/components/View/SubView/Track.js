@@ -7,7 +7,6 @@ class Track extends Observer {
     super();
     this.state = options;
     this.slider = slider;
-    this.isHasProgress = options.isHasProgress;
     this.init(options);
   }
 
@@ -17,8 +16,8 @@ class Track extends Observer {
   }
 
   update() {
-    if (this.isHasProgress) {
-      const { from } = this.state;
+    const { from, isHasProgress } = this.state;
+    if (isHasProgress) {
       this.progress.style.width = `${from}%`;
     }
   }

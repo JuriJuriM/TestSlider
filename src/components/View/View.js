@@ -17,7 +17,7 @@ class View {
   }
 
   update() {
-    this.components.forEach((comp) => comp.update(this.state));
+    this.components.forEach((comp) => comp.setState(this.state));
   }
 
   onEmmit(action) {
@@ -37,11 +37,11 @@ class View {
   createSlider(options) {
     const { isHasLabels } = options;
     if (isHasLabels) {
-      this.label = new Label(this.slider);
+      this.label = new Label(this.slider, options);
       this.components.push(this.label);
     }
     this.track = new Track(this.slider, options);
-    this.handle = new Handle(this.slider);
+    this.handle = new Handle(this.slider, options);
     this.components.push(this.track);
     this.components.push(this.handle);
   }

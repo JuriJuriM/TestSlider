@@ -17,7 +17,6 @@ class Handle extends Observer {
 
   update() {
     const { from } = this.state;
-    // const { from } = data;
     this.subView.style.left = `${from}%`;
   }
 

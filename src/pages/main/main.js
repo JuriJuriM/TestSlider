@@ -8,4 +8,6 @@ const view = new View(slider, {
   isHasProgress: true,
 });
 
-view.update({ from: 70 });
+// view.update({ from: 70 });
+
+view.setState({ from: 70 });

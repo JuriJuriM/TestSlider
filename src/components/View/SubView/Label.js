@@ -17,7 +17,6 @@ class Label extends Observer {
 
   update() {
     const { from } = this.state;
-    // const { from } = data;
     this.subView.innerHTML = `${from}`;
     this.subView.style.left = `${from}%`;
   }
